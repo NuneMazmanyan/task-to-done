@@ -1,6 +1,6 @@
 <div class="task-item">
     <p class="task-item_index">{{taskIndex}}</p>
-    <p class="task-item_name">{{ task.taskName }}</p>
+    <p class="task-item_name">{{ task.taskName | truncate: 50}}</p>
 
     <button class="task-item_edit-button" (click)="isEditModalOpen = true">
         <svg class="task-item_edit-svg" width="20" height="20" viewBox="0 0 20 20" fill="none"

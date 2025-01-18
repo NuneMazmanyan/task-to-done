@@ -1,4 +1,6 @@
 <div class="header">
     <h1 class="header-title">TaskToDone</h1>
-    <button class="header-button">{{'create task' | uppercase}}</button>
+    <button (click)="isCreateTaskModalOpen = true" class="header-button">{{'create task' | uppercase}}</button>
 </div>
+
+<app-create-task-modal *ngIf="isCreateTaskModalOpen" (close)="isCreateTaskModalOpen = false"></app-create-task-modal>

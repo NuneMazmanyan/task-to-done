@@ -53,34 +53,6 @@
       margin-top: 2%;
     }
 
-    &_states {
-      background-color: #F2CBFF;
-      border-radius: 16px;
-      display: grid;
-      grid-template-columns: repeat(4, auto);
-      width: 80%;
-      padding: 1%;
-      margin-top: 8%;
-
-      &-item {
-        color: #fff;
-        background-color: #D45FFF;
-        border-radius: 8px;
-        border: none;
-        padding: 2% 8%;
-        margin: 0 1.5%;
-        font-size: larger;
-
-        &_active {
-          background-color: #A201DC;
-        }
-
-        &:hover {
-          transform: scale(1.05);
-        }
-      }
-    }
-
     &_manipulation {
       margin-top: 3%;
       display: flex;
@@ -92,14 +64,6 @@
         font-size: large;
       }
 
-      &_delete {
-        color: #CF0707;
-
-        &:hover {
-          color: #F91818;
-        }
-      }
-
       &_close {
         color: #8E8E8E;
 
@@ -108,7 +72,7 @@
         }
       }
 
-      &_save {
+      &_create {
         color: #AF00B2;
         margin-left: auto;
 

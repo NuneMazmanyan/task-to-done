@@ -7,6 +7,7 @@ import { HeaderComponent } from './taskboard/header/header.component';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { TaskComponent } from './taskboard/task/task.component';
 import { EditModalComponent } from './taskboard/task/edit-modal/edit-modal.component';
+import { CreateTaskModalComponent } from './taskboard/header/create-task-modal/create-task-modal.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { EditModalComponent } from './taskboard/task/edit-modal/edit-modal.compo
     TaskboardComponent,
     HeaderComponent,
     TaskComponent,
-    EditModalComponent
+    EditModalComponent,
+    CreateTaskModalComponent
   ],
   imports: [
     BrowserModule,

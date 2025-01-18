@@ -17,7 +17,7 @@ export class EditModalComponent {
 
   saveChanges() {
     this.taskService.updateTask(this.task);
-    if(this.selectedState != this.task.state){
+    if (this.selectedState != this.task.state) {
       const newIndex = this.taskService.getStateTasks(this.selectedState).length;
       this.taskService.updateTaskState(this.task, this.selectedState, newIndex);
     }
@@ -28,12 +28,12 @@ export class EditModalComponent {
     this.close.emit();
   }
 
-  deleteTask(){
+  deleteTask() {
     this.taskService.deleteTask(this.task);
     this.onClose();
   }
 
-  changeTaskState(state: TaskState){
+  changeTaskState(state: TaskState) {
     this.selectedState = state;
   }
 }

@@ -75,11 +75,18 @@ export class TaskService {
     if (taskIndex !== -1) {
       this.tasks[taskIndex] = { ...updatedTask };
     }
-  
+
     this.groupTasksByState();
   }
 
   getStateTasks(state: TaskState): Task[] {
     return this.taskMap[state];
-  }  
+  }
+
+  addTask(newTask: Task) {
+    this.tasks.push(newTask);
+    this.taskMap[TaskState.TODO].push(newTask);
+    this.taskMapSubject.next({ ...this.taskMap });
+  }
+
 }

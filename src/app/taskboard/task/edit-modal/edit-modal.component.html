@@ -13,16 +13,20 @@
     </div>
 
     <input type="text" [(ngModel)]="task.taskName" class="modal-task_name" />
-    <textarea [(ngModel)]="task.description" class="modal-task_description" rows="5" ></textarea>
+    <textarea [(ngModel)]="task.description" class="modal-task_description" rows="5"></textarea>
 
     <div class="modal-task_states">
-      <button class="modal-task_states-item" [ngClass]="{'modal-task_states-item_active': selectedState === state}" *ngFor="let state of taskStates" (click)="changeTaskState(state)">{{ state }}</button>
+      <button class="modal-task_states-item" [ngClass]="{'modal-task_states-item_active': selectedState === state}"
+        *ngFor="let state of taskStates" (click)="changeTaskState(state)">{{ state }}</button>
     </div>
 
     <div class="modal-task_manipulation">
-      <button (click)="deleteTask()" class="modal-task_manipulation_delete modal-task_manipulation_button">{{'delete task' | uppercase}}</button>
-      <button (click)="onClose()" class="modal-task_manipulation_close modal-task_manipulation_button">{{'close' | uppercase}}</button>
-      <button (click)="saveChanges()" class="modal-task_manipulation_save modal-task_manipulation_button">{{'save changes' | uppercase}}</button>
+      <button (click)="deleteTask()" class="modal-task_manipulation_delete modal-task_manipulation_button">{{'delete
+        task' | uppercase}}</button>
+      <button (click)="onClose()" class="modal-task_manipulation_close modal-task_manipulation_button">{{'close' |
+        uppercase}}</button>
+      <button (click)="saveChanges()" class="modal-task_manipulation_save modal-task_manipulation_button">{{'save
+        changes' | uppercase}}</button>
     </div>
   </div>
 </div>

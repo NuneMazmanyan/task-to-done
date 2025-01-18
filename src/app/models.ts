@@ -9,4 +9,5 @@ export interface Task {
     id: number;
     taskName: string;
     state: TaskState;
+    description: string;
 }

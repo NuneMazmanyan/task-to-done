@@ -1,20 +1,112 @@
-.modal-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.5);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 1;
-}
+.modal {
+  &-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+  }
 
-.modal-content {
-  background: #fff;
-  padding: 20px;
-  border-radius: 8px;
-  width: 300px;
-  text-align: center;
+  &-content {
+    background: #fff;
+    padding: 20px;
+    border-radius: 30px;
+    width: 800px;
+  }
+
+  &-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &_title{
+      margin: 0;
+      font-family: Inter;
+    }
+
+    &_button{
+      background-color: transparent;
+      border: none;
+
+      &:hover .modal-header_close-svg path {
+        fill: #850087;
+
+      }
+    }
+  }
+
+  &-task{
+    &_name, &_description{
+      width: 96%;
+      border-radius: 8px;
+      border: 2px solid #AF00B2;
+      padding: 1%;
+      display: block;
+      resize: none;
+      margin-top: 2%;
+    } 
+    
+    &_states{
+      background-color: #F2CBFF;
+      border-radius: 16px;
+      display: grid;
+      grid-template-columns: repeat(4, auto);
+      width: 80%;
+      padding: 1%;
+      margin-top: 8%;
+
+      &-item{
+        color: #fff;
+        background-color: #D45FFF;
+        border-radius: 8px;
+        border: none;
+        padding: 2% 8%;
+        margin: 0 1.5%;
+        font-size: larger;
+
+        &_active{
+          background-color: #A201DC;
+        }
+        
+        &:hover{
+          transform: scale(1.05); 
+        }
+      }
+    }
+    &_manipulation{
+      margin-top: 3%;
+      display: flex;
+
+      &_button{
+        background-color: transparent;
+        border: none;
+        font-weight: 400;
+        font-size: large;
+      }
+      &_delete{
+        color: #CF0707;
+        &:hover{
+          color: #F91818;
+        } 
+      }
+      &_close{
+        color: #8E8E8E;
+        &:hover{
+          color: #707070;
+        }
+      }
+      &_save{
+        color: #AF00B2;
+        margin-left: auto;
+        &:hover{
+          color: #850087;
+        }
+      }
+    }
+  }
 }

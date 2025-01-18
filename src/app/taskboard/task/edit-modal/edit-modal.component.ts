@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { Task } from '../../../models';
+import { Task, TaskState } from '../../../models';
+import { TaskService } from 'src/app/task.service';
 
 @Component({
   selector: 'app-edit-modal',
@@ -8,13 +9,31 @@ import { Task } from '../../../models';
 })
 export class EditModalComponent {
   @Input() task!: Task;
+  @Input() selectedState!: TaskState;
+  @Output() close = new EventEmitter<void>();
+  taskStates = Object.values(TaskState);
 
-  ngOnInit() {
-  }
+  constructor(private taskService: TaskService) { }
 
-  onSave() {
+  saveChanges() {
+    this.taskService.updateTask(this.task);
+    if(this.selectedState != this.task.state){
+      const newIndex = this.taskService.getStateTasks(this.selectedState).length;
+      this.taskService.updateTaskState(this.task, this.selectedState, newIndex);
+    }
+    this.onClose();
   }
 
   onClose() {
+    this.close.emit();
+  }
+
+  deleteTask(){
+    this.taskService.deleteTask(this.task);
+    this.onClose();
+  }
+
+  changeTaskState(state: TaskState){
+    this.selectedState = state;
   }
 }

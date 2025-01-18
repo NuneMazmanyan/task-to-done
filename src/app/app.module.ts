@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { TaskboardComponent } from './taskboard/taskboard.component';
 import { HeaderComponent } from './taskboard/header/header.component';
@@ -18,7 +18,8 @@ import { EditModalComponent } from './taskboard/task/edit-modal/edit-modal.compo
   ],
   imports: [
     BrowserModule,
-    DragDropModule
+    DragDropModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

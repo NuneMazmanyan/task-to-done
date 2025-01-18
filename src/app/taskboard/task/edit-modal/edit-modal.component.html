@@ -1,10 +1,28 @@
 <div class="modal-overlay">
   <div class="modal-content">
-    <h2>{{task.taskName}}</h2>
+    <div class="modal-header">
+      <h2 class="modal-header_title">{{'edit task' | uppercase}}</h2>
+      <button (click)="onClose()" class="modal-header_button">
+        <svg class="modal-header_close-svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+          xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" clip-rule="evenodd"
+            d="M5.46967 5.46967C5.76256 5.17678 6.23744 5.17678 6.53033 5.46967L12 10.9393L17.4697 5.46967C17.7626 5.17678 18.2374 5.17678 18.5303 5.46967C18.8232 5.76256 18.8232 6.23744 18.5303 6.53033L13.0607 12L18.5303 17.4697C18.8232 17.7626 18.8232 18.2374 18.5303 18.5303C18.2374 18.8232 17.7626 18.8232 17.4697 18.5303L12 13.0607L6.53033 18.5303C6.23744 18.8232 5.76256 18.8232 5.46967 18.5303C5.17678 18.2374 5.17678 17.7626 5.46967 17.4697L10.9393 12L5.46967 6.53033C5.17678 6.23744 5.17678 5.76256 5.46967 5.46967Z"
+            fill="#AF00B2" />
+        </svg>
+      </button>
+    </div>
 
-    <div class="modal-actions">
-      <button class="save-btn" (click)="onSave()">Save</button>
-      <button class="close-btn" (click)="onClose()">Cancel</button>
+    <input type="text" [(ngModel)]="task.taskName" class="modal-task_name" />
+    <textarea [(ngModel)]="task.description" class="modal-task_description" rows="5" ></textarea>
+
+    <div class="modal-task_states">
+      <button class="modal-task_states-item" [ngClass]="{'modal-task_states-item_active': selectedState === state}" *ngFor="let state of taskStates" (click)="changeTaskState(state)">{{ state }}</button>
+    </div>
+
+    <div class="modal-task_manipulation">
+      <button (click)="deleteTask()" class="modal-task_manipulation_delete modal-task_manipulation_button">{{'delete task' | uppercase}}</button>
+      <button (click)="onClose()" class="modal-task_manipulation_close modal-task_manipulation_button">{{'close' | uppercase}}</button>
+      <button (click)="saveChanges()" class="modal-task_manipulation_save modal-task_manipulation_button">{{'save changes' | uppercase}}</button>
     </div>
   </div>
 </div>

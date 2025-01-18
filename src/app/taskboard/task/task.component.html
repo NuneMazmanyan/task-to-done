@@ -15,4 +15,4 @@
     </button>
 </div>
 
-<app-edit-modal *ngIf="isEditModalOpen" [task]="task" (close)="isEditModalOpen = false"></app-edit-modal>
+<app-edit-modal *ngIf="isEditModalOpen" [task]="task" [selectedState]="task.state" (close)="isEditModalOpen = false"></app-edit-modal>

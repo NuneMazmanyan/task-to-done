@@ -1,3 +1,5 @@
+@import '../../styles.scss';
+
 .taskboard {
     background-color: #F4E3FF;
     margin: 2% 3%;
@@ -21,19 +23,32 @@
         &_title {
             color: #6C0093;
             font-size: 24px;
-            font-weight: bold;
+            font-weight: 400;
             margin-bottom: 15px;
             margin-top: 0;
+            font-family: $font-almarai;
         }
 
         &_list {
-
             background-color: #FDE1FF;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             min-height: 600px;
             border-radius: 8px;
 
-
+            &-empty {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                color: #6C0093;
+                font-family: $font-inter;
+                font-weight: 400;
+                text-align: center;
+                height: 100%;
+            }
         }
     }
+}
+
+.cdk-drag-placeholder {
+    display: none;
 }

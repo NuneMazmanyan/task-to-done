@@ -6,7 +6,10 @@
             [cdkDropListConnectedTo]="connectedTo(state)">
             <h3 class="taskboard-column_title">{{ state }}</h3>
             <div class="taskboard-column_list">
-                <div class="task" *ngFor="let task of taskMap[state]" cdkDrag>
+                <div *ngIf="taskMap[state]?.length === 0" class="taskboard-column_list-empty">
+                    Nothing left in this column:)
+                </div>
+                <div class="task" *ngFor="let task of taskMap[state]" cdkDrag cdkDragPreview>
                     <app-task [task]="task" [taskIndex]="taskIndexes[task.id]"></app-task>
                 </div>
             </div>

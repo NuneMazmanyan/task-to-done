@@ -1,20 +1,22 @@
+@import '../../../styles.scss';
 .header {
     display: flex;
     justify-content: space-between;
 
     &-title {
         color: #BB2EC8;
+        font-family: $font-abhaya;
         font-size: 64px;
+        font-weight: 700;
         margin: 0;
     }
 
     &-button {
         color: #AF00B2;
         font-size: 24px;
-        font-family: Inter;
+        font-family: $font-inter;
         border: none;
         background-color: #F4E3FF;
-        ;
         padding: 0;
 
         &:hover {

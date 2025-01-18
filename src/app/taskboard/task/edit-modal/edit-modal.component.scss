@@ -1,3 +1,5 @@
+@import '../../../../styles.scss';
+
 .modal {
   &-overlay {
     position: fixed;
@@ -26,7 +28,8 @@
 
     &_title {
       margin: 0;
-      font-family: Inter;
+      font-family: $font-inter;
+      font-weight: 400;
     }
 
     &_button {
@@ -35,13 +38,11 @@
 
       &:hover .modal-header_close-svg path {
         fill: #850087;
-
       }
     }
   }
 
   &-task {
-
     &_name,
     &_description {
       width: 96%;
@@ -51,6 +52,7 @@
       display: block;
       resize: none;
       margin-top: 2%;
+      font-family: $font-inter;
     }
 
     &_states {
@@ -61,6 +63,8 @@
       width: 80%;
       padding: 1%;
       margin-top: 8%;
+      font-family: $font-inter;
+      font-weight: 400;
 
       &-item {
         color: #fff;
@@ -88,8 +92,9 @@
       &_button {
         background-color: transparent;
         border: none;
-        font-weight: 400;
         font-size: large;
+        font-family: $font-inter;
+        font-weight: 400;
       }
 
       &_delete {

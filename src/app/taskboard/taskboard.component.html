@@ -1,0 +1,15 @@
+<div class="taskboard">
+    <app-header></app-header>
+    <div class="taskboard-board">
+        <div class="taskboard-column" *ngFor="let state of taskStates" cdkDropList [id]="state"
+            [cdkDropListData]="taskMap[state]" (cdkDropListDropped)="drop($event)"
+            [cdkDropListConnectedTo]="connectedTo(state)">
+            <h3 class="taskboard-column_title">{{ state }}</h3>
+            <div class="taskboard-column_list">
+                <div class="task" *ngFor="let task of taskMap[state]" cdkDrag>
+                    <app-task [task]="task" [taskIndex]="taskIndexes[task.id]"></app-task>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,24 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+
+    &-title {
+        color: #BB2EC8;
+        font-size: 64px;
+        margin: 0;
+    }
+
+    &-button {
+        color: #AF00B2;
+        font-size: 24px;
+        font-family: Inter;
+        border: none;
+        background-color: #F4E3FF;
+        ;
+        padding: 0;
+
+        &:hover {
+            color: #850087;
+        }
+    }
+}

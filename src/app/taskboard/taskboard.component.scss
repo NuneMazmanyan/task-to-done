@@ -1,0 +1,39 @@
+.taskboard {
+    background-color: #F4E3FF;
+    margin: 2% 3%;
+    padding: 2%;
+    border-radius: 12px;
+
+    &-board {
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 8px;
+    }
+
+    &-column {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+
+        &_title {
+            color: #6C0093;
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            margin-top: 0;
+        }
+
+        &_list {
+
+            background-color: #FDE1FF;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            min-height: 600px;
+            border-radius: 8px;
+
+
+        }
+    }
+}

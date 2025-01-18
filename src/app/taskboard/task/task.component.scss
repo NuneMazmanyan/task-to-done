@@ -1,0 +1,32 @@
+.task-item {
+    background: #fff;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 5px;
+    cursor: grab;
+    transition: transform 0.2s;
+    min-height: 120px;
+    height: 120px;
+    position: relative;
+
+    &:hover {
+        background-color: #F5C4FF;
+    }
+
+    &_index {
+        margin: 0;
+    }
+
+    &_edit-button {
+        background-color: transparent;
+        border: none;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+
+        &:hover .task-item_edit-svg path {
+            fill: #6C0093;
+        }
+    }
+
+}
